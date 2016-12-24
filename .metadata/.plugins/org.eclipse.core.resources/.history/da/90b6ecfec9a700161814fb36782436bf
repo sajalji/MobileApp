@@ -1,0 +1,23 @@
+package sikuliFramework;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import com.sun.jna.platform.unix.X11.Screen;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver driver=new FirefoxDriver();
+		driver.manage().timeouts().implicitlyWait(10L, TimeUnit.SECONDS);
+		driver.get("http://google.com");
+		Screen s=new Screen();
+		//s.
+		
+
+	}
+
+}

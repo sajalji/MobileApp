@@ -1,0 +1,23 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import com.sun.jna.platform.unix.X11.Screen;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		WebDriver driver;
+		System.setProperty("webdriver.gecko.driver", "C:\\Users\\Sajal\\Desktop\\jars\\geckodriver.exe");
+		driver =new FirefoxDriver();
+		driver.get("http://www.google.com");
+		driver.manage().window().maximize();
+		driver.findElement(By.id("lst-ib")).sendKeys("sexy");
+		driver.findElement(By.xpath("//*[@id='tsf']/div[2]/div[3]/center/input[1]")).click();
+		Screen s=new Screen();
+		driver.quit();
+	}
+
+}
