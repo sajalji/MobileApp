@@ -1,0 +1,16 @@
+import java.io.File;
+
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+
+public class LogClass extends Logger{
+
+
+	public Logger logger(Object o){
+	 Logger l = Logger.getLogger(o.getClass());
+	 String logfile = System.getProperty("user.dir")
+             + File.separator + "\\src\\logFile.properties";
+     PropertyConfigurator.configure(logfile);
+     return l;
+	}
+}
