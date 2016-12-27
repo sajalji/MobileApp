@@ -53,6 +53,7 @@ public class AnotherApp {
      		a.swipe(SwipeElementDirection.UP, 20000);
      		/*Actions a=new Actions(driver);
      		a.clickAndHold(e).perform();*/
+     		a.zoom();
      	
      	
      			driver.quit();
