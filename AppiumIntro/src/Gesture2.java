@@ -49,7 +49,7 @@ public class Gesture2 {
      		
      		//t.tap(e.get(2)).perform();
      		t.tap(0, 657).perform();
-     		t.
+     		
      		//t.longPress(e.get(2)).perform();
      	    Thread.sleep(10000);
 

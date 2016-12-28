@@ -6,18 +6,20 @@ import org.apache.log4j.PropertyConfigurator;
 
 public class LogClass extends Logger{
 
-	
+
 
 	public LogClass(String name) {
 		super(name);
 		// TODO Auto-generated constructor stub
 	}
 
+	 Logger l;
 	public Logger logger(Object o){
-	 Logger l = Logger.getLogger(o.getClass());
+	 l= Logger.getLogger(o.getClass());
 	 String logfile = System.getProperty("user.dir")
              + File.separator + "\\src\\logFile.properties";
      PropertyConfigurator.configure(logfile);
      return l;
 	}
+	
 }

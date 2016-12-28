@@ -1,0 +1,43 @@
+package utility;
+
+import java.sql.*;
+
+import org.testng.annotations.Test;
+
+@Test
+public class DatabaseConn {
+	 String myDriver="com.mysql.cj.jdbc.Driver";
+	 String DBurl="jdbc:mysql://localhost:3306/job_portal";
+	 String username="root";
+	 String password="reddevil";
+	 
+	 public void connection() throws SQLException{
+	 Connection conn=null;
+	 Statement stmt=null;
+	LogClass L=new LogClass("log");
+	L.logger(DatabaseConn.class);
+
+	 try{
+		 Class.forName(myDriver);
+	 conn=DriverManager.getConnection(DBurl,username,password);
+	 
+	 stmt=conn.createStatement();
+	 String sql="select * from job_portal.my_contact";
+	 ResultSet Result=stmt.executeQuery(sql);
+	 
+	 Result.next();
+	 String foundType = Result.getString(1);
+	 Result.getString(2);
+	 
+	 
+	 System.out.println(Result.getString(2));
+	 }
+	 catch(Exception e)
+	 {
+		 System.out.println("Exception was found"+ e.getMessage());
+	 }
+	 finally{
+		 conn.close();
+	 }
+	 }
+}

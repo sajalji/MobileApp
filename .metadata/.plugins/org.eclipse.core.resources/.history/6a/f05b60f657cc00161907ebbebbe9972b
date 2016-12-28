@@ -1,0 +1,31 @@
+package utility;
+
+import java.sql.*;
+
+import org.testng.annotations.Test;
+
+@Test
+public class DatabaseConn {
+	 String myDriver="com.mysql.jdbc.Driver";
+	 String DBurl="jdbc:mysql://localhost:3306/test";
+	 String username="root";
+	 String password="reddevil";
+	 
+	 public void connection() throws SQLException{
+	 Connection conn=null;
+	 Statement stmt=null;
+	 try{
+	 conn=DriverManager.getConnection(DBurl,username,password);
+	 stmt=conn.createStatement();
+	 String sql="select * from country";
+	 stmt.executeQuery(sql);
+	 }
+	 catch(Exception e)
+	 {
+		 System.out.println("Exception was found"+ e.getMessage());
+	 }
+	 finally{
+		 conn.close();
+	 }
+	 }
+}
