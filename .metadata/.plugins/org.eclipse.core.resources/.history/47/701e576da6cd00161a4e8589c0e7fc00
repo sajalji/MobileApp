@@ -1,0 +1,45 @@
+package SetUp;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+
+public class DriverConfig {
+	
+	static WebDriver driver;
+	static FileInputStream file;
+	static Properties prop;
+	
+	public static void main(String args[]){
+//static{
+	try{
+	 file=new FileInputStream(ClassLoader.getSystemResource("Run.Properties").getPath());
+	 prop.load(file);
+	 prop.getProperty("Browser");
+	   
+	   System.out.println(prop.getProperty("Browser"));
+	   
+	   
+	}
+	catch(Exception e){
+		System.out.println("File not Found" +e.getMessage());
+	}
+	System.out.println("sajal");
+	}
+	//}
+
+
+
+public DriverConfig(WebDriver drive)
+	{
+		driver=drive;
+	}
+	
+	
+
+}

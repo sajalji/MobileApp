@@ -1,0 +1,38 @@
+package SetUp;
+
+import java.io.FileReader;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+@Test
+public class DriverConfig {
+	
+	static WebDriver driver;
+	static FileReader file;
+	static Properties prop;
+
+static{
+	try{
+	 file=new FileReader("F:/MobileApp/Test/src/Run.Properties");
+	   prop.load(file);
+	   System.out.println(prop.getProperty("Browser"));
+	   
+	}
+	catch(Exception e){
+		System.out.println("File not Found"+e.getMessage());
+	}
+
+	}
+
+
+
+public DriverConfig(WebDriver drive)
+	{
+		driver=drive;
+	}
+	
+	
+
+}

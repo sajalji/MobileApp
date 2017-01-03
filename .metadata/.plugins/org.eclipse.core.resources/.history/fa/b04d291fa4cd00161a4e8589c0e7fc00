@@ -1,0 +1,19 @@
+package SetUp;
+
+import java.io.FileReader;
+
+import org.openqa.selenium.WebDriver;
+
+public class DriverConfig {
+	
+	static WebDriver driver;
+	FileReader file=new FileReader()
+	
+	public DriverConfig(WebDriver drive)
+	{
+		driver=drive;
+	}
+	
+	
+
+}
